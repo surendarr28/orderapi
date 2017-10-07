@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>hiqpdf.free</id>
+    <version>10.15</version>
+    <title>HiQPdf Free HTML to PDF Converter for .NET and C#</title>
+    <authors>HiQPdf Software</authors>
+    <owners>HiQPdf Software</owners>
+    <licenseUrl>http://www.hiqpdf.com/SoftwareLicenseAgreeement.aspx</licenseUrl>
+    <projectUrl>http://www.hiqpdf.com/free-html-to-pdf-converter.aspx</projectUrl>
+    <iconUrl>http://www.hiqpdf.com/images/HiQPdf_64x64.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HiQPdf Free HTML to PDF Converter Library for .NET and C# is the limited free version of the fully featured HiQPdf Library for .NET from http://www.hiqpdf.com . With Free HTML to PDF Converter Library for .NET you can create maximum 3 PDF pages of high quality content for free. 
+
+If you want to create larger unlimited PDF documents or you if you need advanced features like live URLs, internal links, outlines, table of contents, headers and footers, PDF forms, edit, merge and split PDF documents, extract text and images from PDF or PDF pages rasterization you can use the full version of the software. 
+
+With HiQPdf Free HTML to PDF Converter Library for .NET you to create PDF documents directly from HTML pages in your ASP.NET and MVC Websites, Desktop Applications and Services. You can use the free library in .NET 4.0 and later applications, in C# and VB.NET languages, on 32-bit and 64-bit Windows machines.
+
+The Free HTML to PDF Converter for .NET offers you the fastest and the most precise HTML to PDF conversion technology you can use in your .NET applications. The library can convert any HTML document to PDF preserving all the CSS styles and executing all the JavaScript scripts found in the HTML document.
+
+The Free HTML to PDF Converter can render HTML documents with last generation content like SVG, Web Fonts and CSS3 styles. The JavaScript engine is fast and can easily handle complex scripts allowing you to use the latest powerful JavaScript libraries existing on market.
+
+HiQPdf Free HTML to PDF Converter for .NET can convert HTML documents using Web Fonts which are a great tool for web designers to create special effects on text in a HTML document. The Web Fonts are downloaded on the fly by converter and used to render the HTML document to PDF without installing those fonts on the local machine.
+
+HiQPdf Software does not depend on installed browsers, printer drivers, viewers or any other third party software.</description>
+    <summary>HiQPdf Free HTML to PDF Converter for .NET and C# is a limited free version of the fully featured HiQPdf Library for .NET  from http://www.hiqpdf.com .</summary>
+    <copyright>HiQPdf Software</copyright>
+    <tags>hiqpdf free html pdf c# vb.net converter library .net html-to-pdf pdf-library html-to-pdf-.net html-to-pdf-c# free-html-to-pdf free-html-to-pdf-.net free-html-to-pdf-c#</tags>
+  </metadata>
+</package>
