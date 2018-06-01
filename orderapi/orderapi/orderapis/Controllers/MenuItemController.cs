@@ -42,9 +42,9 @@ namespace orderapis.Controllers
                                                             + " mi.id as itemid,"
                                                             + " pm.iQuantity as packagequantity,"
                                                             + " pm.iPrice as packageitemprice"
-                                                            + " from (SELECT * FROM tbl_package) as u"
+                                                            + " from (SELECT * FROM tbl_package where isActive = true) as u"
                                                             + " left join tbl_package_mapping  pm on pm.iPackageId = u.id"
-                                                            + " left join tbl_menu_item mi on mi.id = pm.iItemId"));
+                                                            + " left join tbl_menu_item mi on mi.id = pm.iItemId where mi.isActive = true" ));
             }
             catch (Exception ex)
             {
@@ -58,7 +58,7 @@ namespace orderapis.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, DbAccess.DbASelect("select * from tbl_menu_item where deletedAt IS NULL"));
+                return Request.CreateResponse(HttpStatusCode.OK, DbAccess.DbASelect("select * from tbl_menu_item where isActive = true and deletedAt IS NULL"));
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace orderapis.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, DbAccess.DbASelect("select * from tbl_logistic_items where deletedAt IS NULL"));
+                return Request.CreateResponse(HttpStatusCode.OK, DbAccess.DbASelect("select * from tbl_logistic_items where isActive = true AND deletedAt IS NULL"));
             }
             catch (Exception ex)
             {

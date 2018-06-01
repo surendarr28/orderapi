@@ -106,6 +106,39 @@
                 throw new NotImplementedException(ex.Message);
             }
         }
+        public static string DbAUpdatecommon(string query)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                using (MySqlConnection objDbConnection = new MySqlConnection(dbConnection))
+                {
+                    using (MySqlCommand DBcommand = new MySqlCommand(query, objDbConnection))
+                    {
+                        objDbConnection.Open();
+
+                        int i = DBcommand.ExecuteNonQuery();
+
+                        if (i == 1)
+                        {
+                            return "success";
+                        }
+                        else
+                        {
+                            return "error";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException(ex.Message);
+            }
+        }
+
+
+
 
         public static string DbAInsert(string tableName, object objItem)
         {
@@ -292,6 +325,15 @@
 
 
 
+    }
+
+    public class Query
+    {
+    public string query
+        {
+        get;
+        set;
+        }
     }
 
     public class General

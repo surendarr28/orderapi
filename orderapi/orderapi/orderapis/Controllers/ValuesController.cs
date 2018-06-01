@@ -55,6 +55,39 @@ namespace orderapis.Controllers
         }
 
         [HttpPost]
+        [ActionName("selectdata")]
+        public HttpResponseMessage commonselect(Query query)
+        {
+            try
+            {
+                var data = DbAccess.DbASelect(query.query);
+
+             return Request.CreateResponse(HttpStatusCode.Accepted, data);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        [HttpPost]
+        [ActionName("updateinsertdata")]
+        public HttpResponseMessage commonupdateinsertselect(Query query)
+        {
+            try
+            {
+                var data = DbAccess.DbAUpdatecommon(query.query);
+
+                return Request.CreateResponse(HttpStatusCode.Accepted, data);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        [HttpPost]
         [ActionName("chcektoken")]
         public HttpResponseMessage checkLogin(Dictionary<string, object> objItem)
         {

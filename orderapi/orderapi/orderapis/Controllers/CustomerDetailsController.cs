@@ -109,7 +109,7 @@ namespace orderapis.Controllers
         [ActionName("checkcustomer")]
         public HttpResponseMessage checkcustomer(CustomerDetails objItem)
         {
-            var customers = DbAccess.DbASelect("select * from tbl_customer_details where iPhonenumber ='" + objItem.iPhonenumber + "' or vcEmailid = '" + objItem.vcEmailid + "'");
+            var customers = DbAccess.DbASelect("select * from tbl_customer_details where isActive = true and ( iPhonenumber ='" + objItem.iPhonenumber + "' or vcEmailid = '" + objItem.vcEmailid + "')");
             return Request.CreateResponse(HttpStatusCode.OK, customers);
         }
 
@@ -465,7 +465,12 @@ namespace orderapis.Controllers
         [ActionName("invoice")]
         public HttpResponseMessage invoice(Recipt objItem)
         {
-            var updateOrder = DbAccess.DbAQueryInsert("update tbl_order set iConfirm='1', vcInvoiceId ='I-" + RandomNumber() + "' where id = '" + objItem.order.id + "'");
+            var selectedOrder = DbAccess.DbASelect("select vcInvoiceId from tbl_order  where id = '" + objItem.order.id + "' AND vcInvoiceId IS NOT NULL " );
+
+            if (selectedOrder.Count == 0)
+            {     
+                     var updateOrder = DbAccess.DbAQueryInsert("update tbl_order set iConfirm='1', vcInvoiceId ='I-" + RandomNumber() + "' where id = '" + objItem.order.id + "'");
+            }
             var orders = DbAccess.DbASelect("select o.vcOrderId, "
                                                 + " o.vcInvoiceId,"
                                                 + " o.id,"

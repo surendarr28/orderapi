@@ -26,6 +26,31 @@
             License owner identifier.
             </summary>
         </member>
+        <member name="T:NReco.PdfGenerator.WkHtmlInput">
+            <summary>
+            Represents one wkhtmltopdf input.
+            </summary>
+        </member>
+        <member name="P:NReco.PdfGenerator.WkHtmlInput.Input">
+            <summary>
+            HTML file name or URL.
+            </summary>
+        </member>
+        <member name="P:NReco.PdfGenerator.WkHtmlInput.CustomWkHtmlPageArgs">
+            <summary>
+            Custom WkHtmlToPdf page options for this input.
+            </summary>
+        </member>
+        <member name="P:NReco.PdfGenerator.WkHtmlInput.PageHeaderHtml">
+            <summary>
+            Get or set custom page header HTML for this input.
+            </summary>
+        </member>
+        <member name="P:NReco.PdfGenerator.WkHtmlInput.PageFooterHtml">
+            <summary>
+            Get or set custom page footer HTML for this input.
+            </summary>
+        </member>
         <member name="T:NReco.PdfGenerator.WkHtmlToPdfException">
             <summary>
             The exception that is thrown when WkHtmlToPdf process retruns non-zero error exit code
@@ -114,6 +139,14 @@
             Generate PDF into specified output file by several HTML documents (local files or URLs) 
             </summary>
             <param name="htmlFiles">list of HTML files or URLs</param>
+            <param name="coverHtml">first page HTML (optional, can be null)</param>
+            <param name="outputPdfFilePath">path to output PDF file (if file already exists it will be removed before PDF generation)</param>
+        </member>
+        <member name="M:NReco.PdfGenerator.HtmlToPdfConverter.GeneratePdfFromFiles(NReco.PdfGenerator.WkHtmlInput[],System.String,System.String)">
+            <summary>
+            Generate PDF into specified output file by several HTML documents (local files or URLs) 
+            </summary>
+            <param name="htmlFiles">list of <see cref="T:NReco.PdfGenerator.WkHtmlInput"/></param>
             <param name="coverHtml">first page HTML (optional, can be null)</param>
             <param name="outputPdfFilePath">path to output PDF file (if file already exists it will be removed before PDF generation)</param>
         </member>
